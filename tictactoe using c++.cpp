@@ -1,6 +1,6 @@
 #include<iostream>				
 #include<iomanip>				// for setw() function
-#include<windows.h>				// for coloring and x,y coordinates for consol
+#include<Windows.h>				// for coloring and x,y coordinates for consol
 
 using namespace std;			//declaration of cout<</cin>>
 HANDLE hConsole;
@@ -156,12 +156,15 @@ void instruction() {
 		SetConsoleTextAttribute(hConsole, 11);
 }
 void initialized(){
+	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	cout << "Enter First Player Name: ";
 	cin >> name1;
 	cout << "Enter Secong Player Name: ";
 	cin >> name2;
 }
 void printboard() {
+	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hConsole, 14);
 	cout << endl;
 	gotoxy(10,2);
 	cout << setw(4) << box[1] << "\t|" << setw(4) << box[2] << "\t|" << setw(4) << box[3];
@@ -173,9 +176,11 @@ void printboard() {
 	cout << " ----------------------------";
 	gotoxy(10,6);
 	cout << setw(4) << box[7] << "\t|" << setw(4) << box[8] << "\t|" << setw(4) << box[9];
+	SetConsoleTextAttribute(hConsole, 7);
 }
 void giveinput() {
-xyz:
+	xyz:
+	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	gotoxy(1,8);
 	cout << "X player turn:";
 	gotoxy(1,9);
@@ -187,8 +192,8 @@ xyz:
 		}
 		else {
 			gotoxy(1, 18);
-			SetConsoleTextAttribute(hConsole, 7);
-			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 8);
+			cout << "This position is filled enter empty position: \n\n";
 			SetConsoleTextAttribute(hConsole, 15);
 			goto xyz;
 		}
@@ -200,7 +205,7 @@ xyz:
 		else {
 			gotoxy(1, 18);
 			SetConsoleTextAttribute(hConsole, 7);
-			cout << "this position is filled enter empty position: \n\n";
+			cout << "This position is filled enter empty position: \n\n";
 			SetConsoleTextAttribute(hConsole, 15);
 			goto xyz;
 		}
@@ -211,8 +216,8 @@ xyz:
 		}
 		else {
 			gotoxy(1, 18);
-			SetConsoleTextAttribute(hConsole, 7);
-			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 9);
+			cout << "This position is filled enter empty position: \n\n";
 			SetConsoleTextAttribute(hConsole, 15);
 			goto xyz;
 		}
@@ -223,8 +228,8 @@ xyz:
 		}
 		else {
 			gotoxy(1, 18);
-			SetConsoleTextAttribute(hConsole, 7);
-			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 10);
+			cout << "This position is filled enter empty position: \n\n";
 			SetConsoleTextAttribute(hConsole, 15);
 			goto xyz;
 		}
@@ -235,8 +240,8 @@ xyz:
 		}
 		else {
 			gotoxy(1, 18);
-			SetConsoleTextAttribute(hConsole, 7);
-			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 11);
+			cout << "This position is filled enter empty position: \n\n";
 			SetConsoleTextAttribute(hConsole, 15);
 			goto xyz;
 		}
@@ -247,8 +252,8 @@ xyz:
 		}
 		else {
 			gotoxy(1, 18);
-			SetConsoleTextAttribute(hConsole, 7);
-			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 12);
+			cout << "This position is filled enter empty position: \n\n";
 			SetConsoleTextAttribute(hConsole, 15);
 			goto xyz;
 		}
@@ -259,8 +264,8 @@ xyz:
 		}
 		else {
 			gotoxy(1, 18);
-			SetConsoleTextAttribute(hConsole, 7);
-			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 13);
+			cout << "This position is filled enter empty position: \n\n";
 			SetConsoleTextAttribute(hConsole, 15);
 			goto xyz;
 		}
@@ -271,8 +276,8 @@ xyz:
 		}
 		else {
 			gotoxy(1, 18);
-			SetConsoleTextAttribute(hConsole, 7);
-			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 14);
+			cout << "This position is filled enter empty position: \n\n";
 			SetConsoleTextAttribute(hConsole, 15);
 			goto xyz;
 		}
@@ -283,8 +288,8 @@ xyz:
 		}
 		else {
 			gotoxy(1, 18);
-			SetConsoleTextAttribute(hConsole, 7);
-			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 15);
+			cout << "This position is filled enter empty position: \n\n";
 			SetConsoleTextAttribute(hConsole, 15);
 			goto xyz;
 		}
@@ -296,6 +301,7 @@ xyz:
 
 void updateinput() {
 abc:
+	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	gotoxy(1,12);
 	cout << "O player turn: ";
 	gotoxy(1,13);
@@ -303,112 +309,121 @@ abc:
 	cin >> position;
 	if (position == 1) {
 		if (box[1] == ' ') {
+			SetConsoleTextAttribute(hConsole, 10);
 			box[1] = 'O';
 		}
 		else {
 			gotoxy(1, 18);
 			SetConsoleTextAttribute(hConsole, 7);
-			cout << "this position is filled enter empty position: \n\n";
+			cout << "This position is filled enter empty position: \n\n";
 			SetConsoleTextAttribute(hConsole, 15);
 			goto abc;
 		}
 	}
 	else if (position == 2) {
 		if (box[2] == ' ') {
+			SetConsoleTextAttribute(hConsole, 10);
 			box[2] = 'O';
 		}
 		else {
 			gotoxy(1, 18);
-			SetConsoleTextAttribute(hConsole, 7);
-			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 8);
+			cout << "This position is filled enter empty position: \n\n";
 			SetConsoleTextAttribute(hConsole, 15);
 			goto abc;
 		}
 	}
 	else if (position == 3) {
 		if (box[3] == ' ') {
+			SetConsoleTextAttribute(hConsole, 10);
 			box[3] = 'O';
 		}
 		else {
 			gotoxy(1, 18);
-			SetConsoleTextAttribute(hConsole, 7);
-			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 9);
+			cout << "This position is filled enter empty position: \n\n";
 			SetConsoleTextAttribute(hConsole, 15);
 			goto abc;
 		}
 	}
 	if (position == 4) {
 		if (box[4] == ' ') {
+			SetConsoleTextAttribute(hConsole, 10);
 			box[4] = 'O';
 		}
 		else {
 			gotoxy(1, 18);
-			SetConsoleTextAttribute(hConsole, 7);
-			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 10);
+			cout << "This position is filled enter empty position: \n\n";
 			SetConsoleTextAttribute(hConsole, 15);
 			goto abc;
 		}
 	}
 	if (position == 5) {
 		if (box[5] == ' ') {
+			SetConsoleTextAttribute(hConsole, 10);
 			box[5] = 'O';
 		}
 		else {
 			gotoxy(1, 18);
-			SetConsoleTextAttribute(hConsole, 7);
-			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 11);
+			cout << "This position is filled enter empty position: \n\n";
 			SetConsoleTextAttribute(hConsole, 15);
 			goto abc;
 		}
 	}
 	if (position == 6) {
 		if (box[6] == ' ') {
+			SetConsoleTextAttribute(hConsole, 10);
 			box[6] = 'O';
 		}
 		else {
 			gotoxy(1, 18);
-			SetConsoleTextAttribute(hConsole, 7);
-			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 12);
+			cout << "This position is filled enter empty position: \n\n";
 			SetConsoleTextAttribute(hConsole, 15);
 			goto abc;
 		}
 	}
 	if (position == 7) {
 		if (box[7] == ' ') {
-			box[7] = 'O';
-		}
+			SetConsoleTextAttribute(hConsole, 10);
+			box[7] = 'O';		}
 		else {
 			gotoxy(1, 18);
-			SetConsoleTextAttribute(hConsole, 7);
-			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 13);
+			cout << "This position is filled enter empty position: \n\n";
 			SetConsoleTextAttribute(hConsole, 15);
 			goto abc;
 		}
 	}
 	if (position == 8) {
 		if (box[8] == ' ') {
+			SetConsoleTextAttribute(hConsole, 10);
 			box[8] = 'O';
 		}
 		else {
 			gotoxy(1, 18);
-			SetConsoleTextAttribute(hConsole, 7);
-			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 14);
+			cout << "This position is filled enter empty position: \n\n";
 			SetConsoleTextAttribute(hConsole, 15);
 			goto abc;
 		}
 	}
 	if (position == 9) {
 		if (box[9] == ' ') {
+			SetConsoleTextAttribute(hConsole, 10);
 			box[9] = 'O';
 		}
 		else {
 			gotoxy(1, 18);
-			SetConsoleTextAttribute(hConsole, 7);
-			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 15);
+			cout << "This position is filled enter empty position: \n\n";
 			SetConsoleTextAttribute(hConsole, 15);
 			goto abc;
 		}
 	}
+	SetConsoleTextAttribute(hConsole, 7);
 	printboard();
 }
 void checkwin() {
