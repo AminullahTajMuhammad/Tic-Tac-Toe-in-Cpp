@@ -40,8 +40,8 @@ int main() {
 	isdraw = 0;
 	welcomescreen();
 	system("cls");				//for clear screen
-	instruction();
-	Sleep(10000);				//next screen start in 10 sec automatically
+//	instruction();
+//	Sleep(10000);				//next screen start in 10 sec automatically
 	system("cls");
 	initialized();
 	system("cls");
@@ -176,7 +176,9 @@ void printboard() {
 }
 void giveinput() {
 xyz:
-	cout << "\nX player turn: \n";
+	gotoxy(1,8);
+	cout << "X player turn:";
+	gotoxy(1,9);
 	cout << "Enter Position in numbers: ";
 	cin >> position;
 	if (position == 1) {
@@ -184,7 +186,10 @@ xyz:
 			box[1] = 'X';
 		}
 		else {
+			gotoxy(1, 18);
+			SetConsoleTextAttribute(hConsole, 7);
 			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 15);
 			goto xyz;
 		}
 	}
@@ -193,7 +198,10 @@ xyz:
 			box[2] = 'X';
 		}
 		else {
+			gotoxy(1, 18);
+			SetConsoleTextAttribute(hConsole, 7);
 			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 15);
 			goto xyz;
 		}
 	}
@@ -202,7 +210,10 @@ xyz:
 			box[3] = 'X';
 		}
 		else {
+			gotoxy(1, 18);
+			SetConsoleTextAttribute(hConsole, 7);
 			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 15);
 			goto xyz;
 		}
 	}
@@ -211,7 +222,10 @@ xyz:
 			box[4] = 'X';
 		}
 		else {
+			gotoxy(1, 18);
+			SetConsoleTextAttribute(hConsole, 7);
 			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 15);
 			goto xyz;
 		}
 	}
@@ -220,7 +234,10 @@ xyz:
 			box[5] = 'X';
 		}
 		else {
+			gotoxy(1, 18);
+			SetConsoleTextAttribute(hConsole, 7);
 			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 15);
 			goto xyz;
 		}
 	}
@@ -229,7 +246,10 @@ xyz:
 			box[6] = 'X';
 		}
 		else {
-			cout << "this position is filled enter empty position:\n\n ";
+			gotoxy(1, 18);
+			SetConsoleTextAttribute(hConsole, 7);
+			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 15);
 			goto xyz;
 		}
 	}
@@ -238,7 +258,10 @@ xyz:
 			box[7] = 'X';
 		}
 		else {
-			cout << "this position is filled enter empty position:\n\n ";
+			gotoxy(1, 18);
+			SetConsoleTextAttribute(hConsole, 7);
+			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 15);
 			goto xyz;
 		}
 	}
@@ -247,7 +270,10 @@ xyz:
 			box[8] = 'X';
 		}
 		else {
-			cout << "this position is filled enter empty position:\n\n ";
+			gotoxy(1, 18);
+			SetConsoleTextAttribute(hConsole, 7);
+			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 15);
 			goto xyz;
 		}
 	}
@@ -256,7 +282,10 @@ xyz:
 			box[9] = 'X';
 		}
 		else {
-			cout << "this position is filled enter empty position:\n\n ";
+			gotoxy(1, 18);
+			SetConsoleTextAttribute(hConsole, 7);
+			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 15);
 			goto xyz;
 		}
 	}
@@ -267,7 +296,9 @@ xyz:
 
 void updateinput() {
 abc:
-	cout << "\nO player turn: \n";
+	gotoxy(1,12);
+	cout << "O player turn: ";
+	gotoxy(1,13);
 	cout << "Enter Position in numbers: ";
 	cin >> position;
 	if (position == 1) {
@@ -275,7 +306,10 @@ abc:
 			box[1] = 'O';
 		}
 		else {
+			gotoxy(1, 18);
+			SetConsoleTextAttribute(hConsole, 7);
 			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 15);
 			goto abc;
 		}
 	}
@@ -284,7 +318,10 @@ abc:
 			box[2] = 'O';
 		}
 		else {
+			gotoxy(1, 18);
+			SetConsoleTextAttribute(hConsole, 7);
 			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 15);
 			goto abc;
 		}
 	}
@@ -293,7 +330,10 @@ abc:
 			box[3] = 'O';
 		}
 		else {
+			gotoxy(1, 18);
+			SetConsoleTextAttribute(hConsole, 7);
 			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 15);
 			goto abc;
 		}
 	}
@@ -302,7 +342,10 @@ abc:
 			box[4] = 'O';
 		}
 		else {
+			gotoxy(1, 18);
+			SetConsoleTextAttribute(hConsole, 7);
 			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 15);
 			goto abc;
 		}
 	}
@@ -311,7 +354,10 @@ abc:
 			box[5] = 'O';
 		}
 		else {
+			gotoxy(1, 18);
+			SetConsoleTextAttribute(hConsole, 7);
 			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 15);
 			goto abc;
 		}
 	}
@@ -320,7 +366,10 @@ abc:
 			box[6] = 'O';
 		}
 		else {
-			cout << "this position is filled enter empty position:\n\n ";
+			gotoxy(1, 18);
+			SetConsoleTextAttribute(hConsole, 7);
+			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 15);
 			goto abc;
 		}
 	}
@@ -329,7 +378,10 @@ abc:
 			box[7] = 'O';
 		}
 		else {
-			cout << "this position is filled enter empty position:\n\n ";
+			gotoxy(1, 18);
+			SetConsoleTextAttribute(hConsole, 7);
+			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 15);
 			goto abc;
 		}
 	}
@@ -338,7 +390,10 @@ abc:
 			box[8] = 'O';
 		}
 		else {
-			cout << "this position is filled enter empty position:\n\n ";
+			gotoxy(1, 18);
+			SetConsoleTextAttribute(hConsole, 7);
+			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 15);
 			goto abc;
 		}
 	}
@@ -347,7 +402,10 @@ abc:
 			box[9] = 'O';
 		}
 		else {
-			cout << "this position is filled enter empty position:\n\n ";
+			gotoxy(1, 18);
+			SetConsoleTextAttribute(hConsole, 7);
+			cout << "this position is filled enter empty position: \n\n";
+			SetConsoleTextAttribute(hConsole, 15);
 			goto abc;
 		}
 	}
@@ -358,20 +416,19 @@ void checkwin() {
 		box[7] == 'X' && box[8] == 'X' && box[9] == 'X' || box[1] == 'X' && box[4] == 'X' && box[7] == 'X' ||
 		box[2] == 'X' && box[5] == 'X' && box[8] == 'X' || box[3] == 'X' && box[6] == 'X' && box[9] == 'X' ||
 		box[1] == 'X' && box[5] == 'X' && box[9] == 'X' || box[3] == 'X' && box[5] == 'X' && box[7] == 'X') {
-
+		
+		gotoxy(1, 20);
 		cout << "X player Wins Means " << name1 << " Wins: " << endl;
 		isgame = false;
 		exit(1);
 		}
 
-	else if (box[1] == 'O' && box[2] == 'O' && box[3] == 'O' || box[4] == 'O' && box[5] == 'O' && box[6] == 'O' ||
-			 box[7] == 'O' && box[8] == 'O' && box[9] == 'O' || box[1] == 'O' && box[4] == 'O' && box[7] == 'O' ||
-			 box[2] == 'O' && box[5] == 'O' && box[8] == 'O' || box[3] == 'O' && box[6] == 'O' && box[9] == 'O' ||
-			 box[1] == 'O' && box[5] == 'O' && box[9] == 'O' || box[3] == 'O' && box[5] == 'O' && box[7] == 'O') {
-			 
+	else if(box[1] == 'O' && box[2] == 'O' && box[3] == 'O' || box[4] == 'O' && box[5] == 'O' && box[6] == 'O' ||
+			box[7] == 'O' && box[8] == 'O' && box[9] == 'O' || box[1] == 'O' && box[4] == 'O' && box[7] == 'O' ||
+			box[2] == 'O' && box[5] == 'O' && box[8] == 'O' || box[3] == 'O' && box[6] == 'O' && box[9] == 'O' ||
+			box[1] == 'O' && box[5] == 'O' && box[9] == 'O' || box[3] == 'O' && box[5] == 'O' && box[7] == 'O') {
+			gotoxy(1, 20);
 			cout << "O player Wins Means " << name2 << " Wins: " << endl;
 			isgame = false;
 		}
-		
-			
 }
